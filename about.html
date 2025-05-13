@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Noble Real Estate - Our history, mission, and commitment to excellence in luxury property services">
+    <title>About Noble Real Estate | Our Story & Values</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reuse existing styles from main CSS */
+        :root {
+            --primary: #0A2463;
+            --accent: #D4AF37;
+            --dark: #040E27;
+            --light: #F9F9F9;
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background: var(--light);
+            padding-top: 100px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Header - Reused from main page */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--accent) 0%, #B8972E 100%);
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+        }
+
+        .logo-icon i {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-menu li a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .nav-menu li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-menu li a:hover {
+            color: var(--accent);
+        }
+
+        .nav-menu li a:hover:after {
+            width: 100%;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 4rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #B8972E 100%);
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+        }
+
+        /* About Page Specific Styles */
+        .about-hero {
+            height: 60vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)),
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 0 5%;
+        }
+
+        .about-hero-content {
+            max-width: 1200px;
+            color: white;
+        }
+
+        .about-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            opacity: 0.9;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            align-items: center;
+        }
+
+        .about-section.reverse {
+            grid-template-areas: "content image";
+        }
+
+        .about-section.reverse .about-content {
+            grid-area: content;
+        }
+
+        .about-section.reverse .about-image {
+            grid-area: image;
+        }
+
+        .about-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 5rem 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent) 0%, #B8972E 100%);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .value-icon i {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .value-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .team-section {
+            margin: 8rem 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem;
+            border: 5px solid var(--accent);
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .testimonials {
+            background: var(--primary);
+            padding: 6rem 5%;
+            color: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            font-family: 'Playfair Display', serif;
+            color: rgba(255, 255, 255, 0.1);
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .client-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .client-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .client-details h5 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .client-details p {
+            font-style: normal;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .awards-section {
+            margin: 6rem 0;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .award-item {
+            text-align: center;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .award-item:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .award-item img {
+            height: 80px;
+            width: auto;
+            margin: 0 auto;
+        }
+
+        /* Footer - Reused from main page */
+        .premium-footer {
+            background: var(--primary);
+            color: white;
+            padding: 6rem 5%;
+            margin-top: 6rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact p {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .newsletter-form {
+            margin-top: 2rem;
+        }
+
+        .newsletter-input {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: transparent;
+            color: white;
+            margin: 1rem 0;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-section.reverse {
+                grid-template-areas: initial;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .about-hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Premium Header -->
+    <header class="sticky-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="logo-text">NOBLE<span>ESTATE</span></div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tel:+233537523396" class="cta-button">Call Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>Our Legacy of Excellence</h1>
+            <p>For over a decade, Noble Real Estate has redefined luxury living through unparalleled service, market expertise, and a commitment to our clients' success.</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <div class="about-container">
+        <section class="about-section">
+            <div class="about-content">
+                <h3>Our Humble Beginnings</h3>
+                <p>Founded in 2025 by Bitandam Joshua Bugagnanbon, Noble Real Estate began as a boutique firm with a vision to transform Ghana's luxury real estate landscape. What started as a small team of passionate professionals has grown into the nation's most trusted name in premium property services.</p>
+                <p>Our first major success came in 2012 with the landmark sale of the Oceanview Estate in Accra, setting a new benchmark for luxury properties in the region. This achievement established our reputation for handling exclusive, high-value transactions with discretion and expertise.</p>
+                <a href="#" class="cta-button" style="padding: 1rem 2.5rem; font-size: 1rem;">Our Milestones</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Noble Real Estate early days">
+            </div>
+        </section>
+
+        <section class="about-section reverse">
+            <div class="about-content">
+                <h3>Our Vision for the Future</h3>
+                <p>As we look ahead, Noble Real Estate is committed to sustainable luxury development and expanding our global network. We're pioneering innovative technologies like virtual property tours and blockchain-based transactions to enhance our clients' experience.</p>
+                <p>Our 2025 initiative focuses on eco-conscious luxury developments that combine opulence with environmental responsibility. We believe the future of real estate lies in creating spaces that are as sustainable as they are spectacular.</p>
+                <a href="#" class="cta-button" style="padding: 1rem 2.5rem; font-size: 1rem; background: var(--primary); color: white;">Sustainability Report</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Future developments">
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <h2 class="section-title">Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h4>Integrity</h4>
+                <p>We conduct every transaction with uncompromising honesty and transparency, building relationships that last generations.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h4>Excellence</h4>
+                <p>From property selection to client service, we pursue perfection in every detail, setting industry standards.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h4>Innovation</h4>
+                <p>We embrace cutting-edge technologies and creative solutions to deliver exceptional real estate experiences.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h4>Community</h4>
+                <p>We're committed to enriching the neighborhoods where we work through philanthropy and responsible development.</p>
+            </div>
+        </div>
+
+        <!-- Leadership Team -->
+        <section class="team-section">
+            <h2 class="section-title">Meet Our Leadership</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kwame Asante">
+                    </div>
+                    <h4>Bitandam Joshua Bugagnanbon</h4>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Ama Serwah">
+                    </div>
+                    <h4>Ama Serwah</h4>
+                    <p>Director of Sales</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Esi Boateng">
+                    </div>
+                    <h4>Esi Boateng</h4>
+                    <p>Head of Property Development</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kofi Mensah">
+                    </div>
+                    <h4>Kofi Mensah</h4>
+                    <p>International Relations Director</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2 class="section-title" style="color: white;">Client Testimonials</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Noble Real Estate's market knowledge is unparalleled. They secured our dream home at 15% below market value through skillful negotiation and saved us months of searching.</p>
+                        <div class="client-info">
+                            <div class="client-photo">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Adwoa Johnson">
+                            </div>
+                            <div class="client-details">
+                                <h5>Adwoa Johnson</h5>
+                                <p>Accra Heights Residence</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>As an international investor, I needed a trusted partner. Noble's team handled everything from legal compliance to property management with flawless execution.</p>
+                        <div class="client-info">
+                            <div class="client-photo">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="David Müller">
+                            </div>
+                            <div class="client-details">
+                                <h5>David Müller</h5>
+                                <p>Berlin, Germany</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Their discretion and attention to detail during our penthouse purchase was exceptional. Every document, every viewing, every question was handled with complete professionalism.</p>
+                        <div class="client-info">
+                            <div class="client-photo">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kwabena Ofori">
+                            </div>
+                            <div class="client-details">
+                                <h5>Kwabena Ofori</h5>
+                                <p>CEO, Ofori Group</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section class="awards-section">
+            <h2 class="section-title">Industry Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <img src="https://via.placeholder.com/150x80?text=Best+Real+Estate+2024" alt="Best Real Estate 2024">
+                </div>
+                <div class="award-item">
+                    <img src="https://via.placeholder.com/150x80?text=Luxury+Property+Expert" alt="Luxury Property Expert">
+                </div>
+                <div class="award-item">
+                    <img src="https://via.placeholder.com/150x80?text=Client+Choice+Award" alt="Client Choice Award">
+                </div>
+                <div class="award-item">
+                    <img src="https://via.placeholder.com/150x80?text=Top+Agent+Network" alt="Top Agent Network">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Premium Footer -->
+    <footer class="premium-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Noble Estate</h3>
+                <p>Global leaders in luxury real estate services since 2010</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Kimoateek, Saboba</p>
+                    <p><i class="fas fa-phone"></i> +233 (537) 523-396</p>
+                    <p><i class="fas fa-envelope"></i> concierge@nobleestate.com</p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <label for="newsletter-email" class="visually-hidden">Email Address</label>
+                    <input id="newsletter-email" type="email" class="newsletter-input" placeholder="Enter your email for exclusive updates">
+                    <button type="submit" class="cta-button" style="width: 100%; padding: 1rem;">
+                        Subscribe Now
+                    </button>
+                </form>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Noble Real Estate International. All rights reserved.<br>
+            <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+</html>

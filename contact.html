@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Noble Real Estate - Premium property consultants ready to assist with your luxury real estate needs">
+    <title>Contact Noble Real Estate | Luxury Property Specialists</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reuse existing styles from main CSS */
+        :root {
+            --primary: #0A2463;
+            --accent: #D4AF37;
+            --dark: #040E27;
+            --light: #F9F9F9;
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background: var(--light);
+            padding-top: 100px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Header - Reused from main page */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--accent) 0%, #B8972E 100%);
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+        }
+
+        .logo-icon i {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-menu li a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .nav-menu li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-menu li a:hover {
+            color: var(--accent);
+        }
+
+        .nav-menu li a:hover:after {
+            width: 100%;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 4rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #B8972E 100%);
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            height: 50vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)),
+                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 0 5%;
+        }
+
+        .contact-hero-content {
+            max-width: 1200px;
+            color: white;
+        }
+
+        .contact-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .contact-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            opacity: 0.9;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-bottom: 6rem;
+        }
+
+        .contact-info {
+            padding: 3rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .contact-method {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, #B8972E 100%);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .contact-details h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--accent);
+        }
+
+        .office-hours {
+            margin-top: 3rem;
+        }
+
+        .office-hours h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .hours-table tr {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .hours-table td {
+            padding: 0.75rem 0;
+        }
+
+        .hours-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .contact-form {
+            padding: 3rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-form h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .map-container {
+            height: 500px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 6rem 0;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-agents {
+            margin: 6rem 0;
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .agent-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .agent-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .agent-photo {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .agent-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .agent-card:hover .agent-photo img {
+            transform: scale(1.05);
+        }
+
+        .agent-details {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .agent-details h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-details p {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-contact {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .agent-contact a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: grid;
+            place-items: center;
+            transition: var(--transition);
+        }
+
+        .agent-contact a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Footer - Reused from main page */
+        .premium-footer {
+            background: var(--primary);
+            color: white;
+            padding: 6rem 5%;
+            margin-top: 6rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact p {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .newsletter-form {
+            margin-top: 2rem;
+        }
+
+        .newsletter-input {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: transparent;
+            color: white;
+            margin: 1rem 0;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .contact-info, .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Premium Header -->
+    <header class="sticky-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="logo-text">NOBLE<span>ESTATE</span></div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tel:+233537523396" class="cta-button">Call Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Connect With Our Luxury Specialists</h1>
+            <p>Our team is ready to provide personalized service for your real estate needs. Reach out today to begin your journey.</p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <div class="contact-container">
+        <h2 class="section-title">How Can We Assist You?</h2>
+        
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Corporate Headquarters</h4>
+                        <p>1 Golden Avenue, Saboba<br>Northern Region, Ghana</p>
+                        <a href="#" class="cta-button" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-block; margin-top: 1rem;">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Phone</h4>
+                        <p>
+                            <a href="tel:+233537523396">+233 (537) 523-396</a><br>
+                            <a href="tel:+233244123456">+233 (244) 123-456</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p>
+                            <a href="mailto:concierge@nobleestate.com">concierge@nobleestate.com</a><br>
+                            <a href="mailto:sales@nobleestate.com">sales@nobleestate.com</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="office-hours">
+                    <h4>Office Hours</h4>
+                    <table class="hours-table">
+                        <tr>
+                            <td>Monday - Friday</td>
+                            <td>8:00 AM - 6:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>9:00 AM - 4:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>By Appointment</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name*</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject*</label>
+                        <select id="subject" name="subject" class="form-control" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="property-inquiry">Property Inquiry</option>
+                            <option value="valuation">Property Valuation</option>
+                            <option value="investment">Investment Opportunity</option>
+                            <option value="general">General Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message*</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Map Section -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d1.5624153158035755!3d9.501957278596447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMzAnMDcuMSJOIDHCsDMzJzUxLjEiRQ!5e1!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        
+        <!-- Contact Agents Section -->
+        <div class="contact-agents">
+            <h2 class="section-title">Our Dedicated Agents</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">Connect directly with our luxury property specialists who will guide you through every step of your real estate journey.</p>
+            
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <div class="agent-photo">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Ama Serwah">
+                    </div>
+                    <div class="agent-details">
+                        <h4>Ama Serwah</h4>
+                        <p>Director of Sales</p>
+                        <div class="agent-contact">
+                            <a href="tel:+233244123456" aria-label="Call Ama Serwah"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:ama@nobleestate.com" aria-label="Email Ama Serwah"><i class="fas fa-envelope"></i></a>
+                            <a href="https://wa.me/233244123456" aria-label="WhatsApp Ama Serwah"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-photo">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Esi Boateng">
+                    </div>
+                    <div class="agent-details">
+                        <h4>Esi Boateng</h4>
+                        <p>Luxury Homes Specialist</p>
+                        <div class="agent-contact">
+                            <a href="tel:+233244654321" aria-label="Call Esi Boateng"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:esi@nobleestate.com" aria-label="Email Esi Boateng"><i class="fas fa-envelope"></i></a>
+                            <a href="https://wa.me/233244654321" aria-label="WhatsApp Esi Boateng"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-photo">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kofi Mensah">
+                    </div>
+                    <div class="agent-details">
+                        <h4>Kofi Mensah</h4>
+                        <p>International Clients</p>
+                        <div class="agent-contact">
+                            <a href="tel:+233244789012" aria-label="Call Kofi Mensah"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:kofi@nobleestate.com" aria-label="Email Kofi Mensah"><i class="fas fa-envelope"></i></a>
+                            <a href="https://wa.me/233244789012" aria-label="WhatsApp Kofi Mensah"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Footer -->
+    <footer class="premium-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Noble Estate</h3>
+                <p>Global leaders in luxury real estate services since 2010</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Kimoateek, Saboba</p>
+                    <p><i class="fas fa-phone"></i> +233 (537) 523-396</p>
+                    <p><i class="fas fa-envelope"></i> concierge@nobleestate.com</p>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <label for="newsletter-email" class="visually-hidden">Email Address</label>
+                    <input id="newsletter-email" type="email" class="newsletter-input" placeholder="Enter your email for exclusive updates">
+                    <button type="submit" class="cta-button" style="width: 100%; padding: 1rem;">
+                        Subscribe Now
+                    </button>
+                </form>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Noble Real Estate International. All rights reserved.<br>
+            <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Service</a>
+        </p>
+    </footer>
+
+    <script>
+        // Simple form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if(name && email && message) {
+                // Here you would typically send the form data to your server
+                alert('Thank you for your message. A luxury specialist will contact you shortly.');
+                this.reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    </script>
+</body>
+</html>
